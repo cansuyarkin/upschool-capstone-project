@@ -1,11 +1,10 @@
 import { DebounceInput } from "react-debounce-input";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { searchHandle } from "../reduxStore/searchHandle";
 
 function SearchBar() {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    
     
     return (
         <>

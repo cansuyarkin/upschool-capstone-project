@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import { fetchSearchMovies } from "../api";
-import ReactPaginate from "react-paginate";
 import Card from "./Card";
 import { useNavigate } from "react-router-dom";
 

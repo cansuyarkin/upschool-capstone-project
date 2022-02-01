@@ -1,5 +1,4 @@
 import { useQuery } from "react-query";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick/lib/slider";
 import { fetchCredits, fetchDetails, fetchRecommendations, fetchReviews } from "../../api";
