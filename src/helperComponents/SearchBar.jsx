@@ -7,7 +7,7 @@ function SearchBar() {
     
     return (
         <>
-            <div className="row">
+            <div className="row my-5">
                 <div className="col-6">
                 <DebounceInput 
                     name="qInput"
