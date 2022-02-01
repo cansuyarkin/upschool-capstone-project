@@ -64,7 +64,7 @@ function Detail() {
                     <h6>{detail?.data?.data?.release_date}</h6>
                     <p>{detail?.data?.data?.overview}</p>
                     {
-                        credits?.data?.data?.crew.filter(item => jobs.includes(item.job.toLowerCase())).map((item, index) => <h6 key={index}>{item.job}: {item.name}</h6>)
+                        credits?.data?.data?.crew.filter(item => jobs.includes(item.job.toLowerCase())).map((item, index) => <h6>{item.job}: {item.name}</h6>)
                     }
 
                 </div>
@@ -82,8 +82,8 @@ function Detail() {
                     credits?.data?.data?.cast.map((item, index) => {
                         return <>
                         <img style={{ height: "100px" }} src={item.profile_path ? `https://image.tmdb.org/t/p/w300${item.profile_path}` : "https://www.freeiconspng.com/uploads/no-image-icon-15.png"} alt="" />
-                        <h5 key={index}>{item.name}</h5>
-                        <h6 key={index}>{item.character}</h6>
+                        <h5>{item.name}</h5>
+                        <h6>{item.character}</h6>
                         </>
                     }
                     )

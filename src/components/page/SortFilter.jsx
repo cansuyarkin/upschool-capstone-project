@@ -51,8 +51,8 @@ function SortFilter() {
                     <h5>From:</h5>
                     <h5>To:</h5>
                     {
-                        genres?.map(item =>
-                            <button className="btn btn-secondary">{item.name}</button>
+                        genres?.map((item, index) =>
+                            <button key={index} className="btn btn-secondary">{item.name}</button>
                         )
                     }
 
