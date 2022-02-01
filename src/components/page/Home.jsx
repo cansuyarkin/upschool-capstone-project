@@ -6,8 +6,7 @@ import Search from "../../helperComponents/Search";
 import SearchBar from "../../helperComponents/SearchBar";
 import { timewindowChange } from "../../reduxStore/trending";
 import { Button } from "../../styledComponents/styledButton";
-import Slider from "react-slick";
-import { settings } from "../../helperComponents/slider";
+
 
 function Home() {
 
@@ -36,7 +35,9 @@ function Home() {
             <SearchBar />
             {
                 search !== "" ? (
+                    
                     <Search />
+
                 ) : (
                     <>
 

@@ -1,6 +1,7 @@
 import { combineReducers, createStore } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import genreReducer from "./genres";
 import paginationReducer from "./paginationHandler";
 import searchReducer from "./searchHandle";
 import themeChangeReducer from "./themeChanger";
@@ -15,6 +16,7 @@ const rootReducer = combineReducers(
         pagination: paginationReducer,
         trend: trendingReducer,
         user: userReducer,
+        genres: genreReducer,
     }
 );
 

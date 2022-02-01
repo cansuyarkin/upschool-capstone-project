@@ -88,8 +88,8 @@ function Detail() {
                 }
             </h6>
             <img src={reviews?.data?.data?.results[0]?.author_details?.avatar_path?.slice(1)} alt="" />
-            
-           
+
+
             <p>
                 {reviews?.data?.data?.results[0]?.content}
             </p>
@@ -99,8 +99,9 @@ function Detail() {
             <Slider {...recomSettings}>
 
                 {
-                    recommendations?.data?.data?.results.map((item, index) =>
-                        <h5 key={index}>{item.original_title}</h5>
+                    recommendations?.data?.data?.results.map((item, index) => 
+                        
+                        <h5 key={index}>{item.original_title}</h5>    
                     )
                 }
 

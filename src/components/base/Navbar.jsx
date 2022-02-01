@@ -1,9 +1,10 @@
 import { themeChange } from "../../reduxStore/themeChanger";
 import { useSelector, useDispatch } from "react-redux";
 import { NavStyle } from "../../styledComponents";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
-import {MdDarkMode} from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
+import { Row } from "react-bootstrap";
 
 
 function Navbar(props) {
@@ -26,6 +27,7 @@ function Navbar(props) {
 
                 <div className="row">
                     <div className="col-2">
+                        {/* <h3><Link to="/" className="text-decoration-none border border-dark shadow p-1" style={{ color: "black" }}>MyMovie</Link></h3> */}
                         <h3><Link to="/" className="text-decoration-none" style={{ color: "black" }}>MyMovie</Link></h3>
                     </div>
                     <div className="col">
@@ -37,22 +39,25 @@ function Navbar(props) {
                             </ul>
                         </div>
                     </div>
+                    <div className="col">
+                        {/* <button onClick={() => dispatch(themeChange(state))}><MdDarkMode>Theme Change</MdDarkMode></button> */}
+                        <MdDarkMode style={{cursor: "pointer"}} onClick={() => dispatch(themeChange(state))} />
+                    </div>
+                    <div className="col" style={{display: "flex", flexDirection: "row", justifyContent: "space-around",}}>
+                        {
+                            routes.filter(item => item.isNav).map((item, index) => 
+                                               
+                                <h3 key={index}><Link to={item.pathname} className="text-decoration-none" style={{ color: "black" , cursor: "pointer"}}>{item.title}</Link></h3>                       
+                                
+                            )
+                        }
+                    </div>
                 </div>
             </div>
 
 
-            <button onClick={() => dispatch(themeChange(state))}><MdDarkMode>Theme Change</MdDarkMode></button>
 
-            {
-                routes.filter(item => item.isNav).map((item, index) =>
 
-                
-                    <h3 key={index}><Link to={item.pathname} className="text-decoration-none" style={{ color: "black" }}>{item.title}</Link></h3>
-                
-               
-               
-                )
-            }
 
 
         </NavStyle>

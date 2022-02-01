@@ -15,20 +15,6 @@ function Login() {
     const [password, setPassword] = useState("");
 
 
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     if (
-    //         e.target.username.value === user.username
-
-    //     ) {
-
-    //     }
-    // };
-
-    // const handleChange = e => {
-    //     e.preventDefault();
-    // }
-
     // const handlePassword = () => {
     //     var pw = document.getElementById("passwordArea");
     //     if (pw.type === "password") {
@@ -57,12 +43,14 @@ function Login() {
             <InputStyle id="password" type="password" onChange={e => setPassword(e.target.value)} placeholder="Password" />
             <LoginButton onClick={(e) => {
                 e.preventDefault();
+               
                 dispatch(userLogin(username, password))
+                
             }}>Log In</LoginButton>
 
             {/* <input type="checkbox" onClick={handlePassword}>Show Password</input> */}
         </FormStyle>
-        {console.log(username)}
+        {console.log(password)}
         {console.log(user)}
     </>
 
