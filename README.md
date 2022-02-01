@@ -18,6 +18,12 @@
 
 ---
 
+### API Documentation
+
+https://www.themoviedb.org/documentation/api
+
+---
+
 ### Install & Run
 
 ```ssh
