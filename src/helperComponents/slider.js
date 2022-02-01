@@ -11,8 +11,8 @@ export const castSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 10,
-    slidesToScroll: 10,
+    slidesToShow: 6,
+    slidesToScroll: 6,
 };
 
 export const recomSettings = {

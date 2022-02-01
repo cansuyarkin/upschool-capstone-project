@@ -27,10 +27,10 @@ function SortFilter() {
     return <>
         <div className="container">
 
-            <h1>Sort-Filter</h1>
-            
-            <div className="row mt-5">
-                <div className="col-4">
+
+
+            <div className="row">
+                <div className="col-4 border border-dark rounded mt-3 mb-3 py-5 px-3">
                     <select className="form-select" aria-label="Default select example" onChange={(e) => dispatch((e.target.options[e.target.selectedIndex].value))}>
                         <option defaultValue="DEFAULT" >Sort By</option>
                         <option defaultValue="original_title.asc">A to Z</option>
@@ -43,12 +43,21 @@ function SortFilter() {
                 </div>
 
             </div>
+
             <div className="row mt-5">
-                {
-                    genres?.map(item =>
-                        <h5>{item.name}</h5>
-                    )
-                }
+
+                <div className="col-4 border border-dark rounded p-5">
+                    <h3>Filter By</h3>
+                    <h5>From:</h5>
+                    <h5>To:</h5>
+                    {
+                        genres?.map(item =>
+                            <button className="btn btn-secondary">{item.name}</button>
+                        )
+                    }
+
+                </div>
+
             </div>
         </div>
     </>

@@ -37,7 +37,7 @@ function Login() {
 
 
     return <>
-        <h1>Login</h1>
+   
         <FormStyle>
             <InputStyle id="username" type="username" onChange={e => setUsername(e.target.value)} placeholder="Username" />
             <InputStyle id="password" type="password" onChange={e => setPassword(e.target.value)} placeholder="Password" />
