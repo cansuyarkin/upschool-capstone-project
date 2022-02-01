@@ -6,13 +6,13 @@ import { routes } from "./routes";
 
 function App() {
 
-  const theme = useSelector(state => state)
+  const theme = useSelector(state => state.theme)
 
   document.body.style.backgroundColor = theme ? "white" : "black";
   document.body.style.color = theme ? "black" : "white";
 
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <Routes>
         {
