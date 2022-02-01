@@ -15,7 +15,7 @@ export const userLogout = () => {
     }
 };
 
-const initialState = [
+const initialState = 
     {
         avatarUrl: "https://i.picsum.photos/id/1005/150/150.jpg?hmac=-Q1z4K5WO9Q7qDB-R9vrj9440_mRxpeHZMOFHblbB6s",
         username: "username",
@@ -35,7 +35,6 @@ const initialState = [
         joinDate: "December 2021",
         userLogin: false,
     }
-]
 
 
 
@@ -43,11 +42,11 @@ const userReducer = (state = initialState, action) => {
     
     switch (action.type) {
         case USER_LOGIN:
-            return (
-                action.payload.username === state.username && action.payload.password === state.password && { ...state, userLogin: true }
-            )
+            console.log("action",action)
+            return action.payload.username === state.username && action.payload.password === state.password && { ...state, userLogin: true }
+            
         case USER_LOGOUT:
-            return initialState
+            return { ...state, userLogin: false }
         default:
             return state
     }
