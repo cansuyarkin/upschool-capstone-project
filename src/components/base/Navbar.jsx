@@ -4,8 +4,6 @@ import { NavStyle } from "../../styledComponents";
 import { Link, useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
 import { MdDarkMode } from "react-icons/md";
-import { Row } from "react-bootstrap";
-
 
 function Navbar(props) {
 
@@ -27,10 +25,10 @@ function Navbar(props) {
 
                 <div className="row">
                     <div className="col-2">
-                        {/* <h3><Link to="/" className="text-decoration-none border border-dark shadow p-1" style={{ color: "black" }}>MyMovie</Link></h3> */}
-                        <h3><Link to="/" className="text-decoration-none" style={{ color: "black" }}>MyMovie</Link></h3>
+                        <h3 className="mt-1"><Link to="/" className="text-decoration-none border border-2 border-dark shadow p-1" style={{ color: "black" }}>MyMovie</Link></h3>
+                        {/* <h2><Link to="/" className="text-decoration-none" style={{ color: "black" }}>MyMovie</Link></h2> */}
                     </div>
-                    <div className="col">
+                    <div className="col-4">
                         <div className="btn-group" onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
                             <h3>Movies</h3>
                             <ul id="movie-dropdown" className="dropdown-menu position-absolute top-100">
@@ -39,11 +37,11 @@ function Navbar(props) {
                             </ul>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col" style={{display: "flex", flexDirection:"row", justifyContent: "end", alignItems: "center"}}>
                         {/* <button onClick={() => dispatch(themeChange(state))}><MdDarkMode>Theme Change</MdDarkMode></button> */}
                         <MdDarkMode style={{cursor: "pointer"}} onClick={() => dispatch(themeChange(state))} />
                     </div>
-                    <div className="col" style={{display: "flex", flexDirection: "row", justifyContent: "space-around",}}>
+                    <div className="col-4" style={{display: "flex", flexDirection: "row", justifyContent: "space-around",}}>
                         {
                             routes.filter(item => item.isNav).map((item, index) => 
                                                
@@ -54,11 +52,6 @@ function Navbar(props) {
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
         </NavStyle>
     </>
