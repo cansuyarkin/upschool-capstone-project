@@ -36,7 +36,10 @@ const userReducer = (state = initialState, action) => {
     
     switch (action.type) {
         case USER_LOGIN:
+
+
             return action.payload.username === state.username && action.payload.password === state.password ? { ...state, userLogin: true } : { ...state, userLogin: false }
+           
         case USER_LOGOUT:
             return { ...state, userLogin: false }
         default:

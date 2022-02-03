@@ -53,7 +53,7 @@ function Detail() {
     const jobs = ["director", "producer"]
 
     return <>
-        <div className="container border border-dark p-5 bg-light">
+        <div className="container border border-dark rounded p-5" style={{ backgroundColor: "#a4b0be" }}>
             <div className="row">
                 <div className="col-4">
                     <img src={detail?.data?.data.poster_path ? `https://image.tmdb.org/t/p/w300${detail?.data?.data.poster_path}` : "https://www.freeiconspng.com/uploads/no-image-icon-15.png"} alt="" />
@@ -70,19 +70,19 @@ function Detail() {
             </div>
         </div>
 
-        <div className="container">
-            <h3 className="mt-5">Film Cast</h3>
-        </div>
 
-        <div className="container mt-5 p-3" style={{backgroundColor: "#f5f6fa"}}>
+        <div className="container mt-5 px-5 pt-4 pb-5 border border-dark rounded" style={{ backgroundColor: "#dfe4ea" }}>
+
+            <h3>Film Cast</h3>
+
             <Slider {...castSettings}>
 
                 {
                     credits?.data?.data?.cast.map((item, index) => {
                         return <>
-                        <img style={{ height: "100px" }} src={item.profile_path ? `https://image.tmdb.org/t/p/w300${item.profile_path}` : "https://www.freeiconspng.com/uploads/no-image-icon-15.png"} alt="" />
-                        <h5>{item.name}</h5>
-                        <h6>{item.character}</h6>
+                            <img style={{ height: "100px" }} src={item.profile_path ? `https://image.tmdb.org/t/p/w300${item.profile_path}` : "https://www.freeiconspng.com/uploads/no-image-icon-15.png"} alt="" />
+                            <h5>{item.name}</h5>
+                            <h6>{item.character}</h6>
                         </>
                     }
                     )
@@ -92,32 +92,31 @@ function Detail() {
             </Slider>
         </div>
 
-        <div className="container mt-5">
+
+
+        <div className="container mt-5 py-4 px-5 border border-dark rounded" style={{ backgroundColor: "#ced6e0" }}>
+
             <h3>Reviews</h3>
-        </div>
 
-        <div className="container mt-3" style={{ backgroundColor: "lightblue" }}>
-
-            <img className="mt-3" src={reviews?.data?.data?.results[0]?.author_details?.avatar_path?.slice(1)} alt="" />
+            <img className="mt-3" src={reviews?.data?.data?.results[1]?.author_details?.avatar_path?.slice(1)} alt="" />
 
             <h6> Author:
                 {
-                    reviews?.data?.data?.results[0]?.author
+                    reviews?.data?.data?.results[1]?.author
                 }
             </h6>
 
 
 
             <p>
-                {reviews?.data?.data?.results[0]?.content}
+                {reviews?.data?.data?.results[1]?.content}
             </p>
         </div>
 
-        <div className="container">
-            <h3>Recommendations</h3>
-        </div>
 
-        <div className="container mt-3" style={{ backgroundColor: "lightpink" }}>
+        <div className="container mt-5 pt-4 pb-5 px-5 border border-dark rounded" style={{ backgroundColor: "#a4b0be" }}>
+
+            <h3>Recommendations</h3>
 
             <Slider {...recomSettings}>
 
