@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { userLogin } from "../../reduxStore/user";
 import { FormStyle, InputStyle, LoginButton } from "../../styledComponents/styledLogin";
 
@@ -11,6 +12,8 @@ function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
 
 
     // const handlePassword = () => {
@@ -49,7 +52,8 @@ function Login() {
             {/* <input type="checkbox" onClick={handlePassword}>Show Password</input> */}
         </FormStyle>
         {console.log(password)}
-        {console.log(user)}
+        {console.log("user:::",user)}
+        {console.log("login", user.userLogin)}
     </>
 
 };

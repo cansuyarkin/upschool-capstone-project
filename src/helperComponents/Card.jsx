@@ -2,8 +2,17 @@ import { CardStyle, MainCardStyle } from "../styledComponents/styledCard";
 import Slider from "react-slick";
 import {settings} from "./slider";
 import { Link } from "react-router-dom";
+import {useDispatch , useSelector} from "react-redux";
+import { addFav, removeFav } from "../reduxStore/favorites";
 
 function Card(props) {
+
+    const dispatch = useDispatch();
+
+    const {favorite} = useSelector(state => state)
+
+    
+
     return (
         <>
         <Slider {...settings}>

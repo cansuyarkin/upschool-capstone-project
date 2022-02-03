@@ -1,6 +1,8 @@
 function About() {
     return <>
-    <h1>About</h1>
+        <div className="container">
+            <h3 className="pt-4">About The Project</h3>
+        </div>
     </>
 };
 

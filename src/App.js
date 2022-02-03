@@ -8,7 +8,7 @@ function App() {
 
   const theme = useSelector(state => state.theme)
 
-  document.body.style.backgroundColor = theme ? "white" : "black";
+  document.body.style.backgroundColor = theme ? "#d4d7c912" : "black";
   document.body.style.color = theme ? "black" : "white";
 
   return (
