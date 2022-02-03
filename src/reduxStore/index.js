@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import favReducer from "./favorites";
@@ -8,7 +8,6 @@ import searchReducer from "./searchHandle";
 import themeChangeReducer from "./themeChanger";
 import trendingReducer from "./trending";
 import userReducer from "./user";
-
 
 const rootReducer = combineReducers(
     {

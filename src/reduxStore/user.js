@@ -1,22 +1,16 @@
 const USER_LOGIN = "USER_LOGIN";
 const USER_LOGOUT = "USER_LOGOUT";
 
+export const userLogin = (username, password) => ({
+    type: USER_LOGIN,
+    payload: { username, password }
+});
 
-export const userLogin = (username, password) => {
-    return {
-        type: USER_LOGIN,
-        payload: { username, password }
-    };
-};
+export const userLogout = () => ({
+    type: USER_LOGOUT,
+});
 
-export const userLogout = () => {
-    return {
-        type: USER_LOGOUT,
-    }
-};
-
-const initialState = 
-    {
+const initialState = {
         avatarUrl: "https://i.picsum.photos/id/1005/150/150.jpg?hmac=-Q1z4K5WO9Q7qDB-R9vrj9440_mRxpeHZMOFHblbB6s",
         username: "username",
         password: "password",
@@ -42,9 +36,10 @@ const userReducer = (state = initialState, action) => {
     
     switch (action.type) {
         case USER_LOGIN:
-            console.log("action",action)
+
+
             return action.payload.username === state.username && action.payload.password === state.password ? { ...state, userLogin: true } : { ...state, userLogin: false }
-            
+           
         case USER_LOGOUT:
             return { ...state, userLogin: false }
         default:
