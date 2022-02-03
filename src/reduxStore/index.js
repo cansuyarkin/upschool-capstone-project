@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import genreReducer from "./genres";
@@ -7,7 +7,6 @@ import searchReducer from "./searchHandle";
 import themeChangeReducer from "./themeChanger";
 import trendingReducer from "./trending";
 import userReducer from "./user";
-
 
 const rootReducer = combineReducers(
     {
@@ -21,13 +20,15 @@ const rootReducer = combineReducers(
 );
 
 const persistConfig = {
-    key: 'root',
+    key: 'counter',
     storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = createStore(persistedReducer);
+
+store.subscribe(() => console.log("STORE:::", store.getState()))
 
 export const persistor = persistStore(store);
 
