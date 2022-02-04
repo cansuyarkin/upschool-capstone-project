@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 
 function Profile() {
 
     const { user } = useSelector(state => state);
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     console.log(user.username)
 

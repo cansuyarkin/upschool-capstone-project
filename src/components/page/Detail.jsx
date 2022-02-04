@@ -66,7 +66,7 @@ function Detail() {
                     <h6>Release Date: {detail?.data?.data?.release_date}</h6>
 
                     <h6> Genres:
-                        {detail?.data?.data?.genres.map(item => <span> {item.name} </span>)}
+                        {detail?.data?.data?.genres.map((item,index) => <span key={index}> {item.name} </span>)}
                     </h6>
 
                     <h6>

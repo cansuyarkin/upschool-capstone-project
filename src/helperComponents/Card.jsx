@@ -14,7 +14,7 @@ function Card(props) {
 
     const dispatch = useDispatch();
 
-    const { favorite, genres } = useSelector(state => state)
+    const {  genres } = useSelector(state => state)
 
     const genresQuery = useQuery("genres", () => fetchGenres, { retry: false })
 
