@@ -5,6 +5,14 @@ import { searchHandle } from "../reduxStore/searchHandle";
 function SearchBar() {
     const dispatch = useDispatch();
     
+    // const handleReset = () => {
+    //     changeFunc("");
+    //   };
+
+    //   const changeFunc = (event) => {
+    //     dispatch(searchHandle(event.target.value))
+    //   };
+    
     
     return (
         <>
@@ -18,10 +26,12 @@ function SearchBar() {
                     debounceTimeout={300}
                     onChange= { (event) => {
                         dispatch(searchHandle(event.target.value))
-                        // navigate(`/search?q=${event.target.value}`)
                     }}
                     placeholder="Search a movie"
                 />
+                </div>
+                <div className="col-6">
+                    <button className=" btn btn-outline-secondary">Reset</button>
                 </div>
             </div>
         </>
