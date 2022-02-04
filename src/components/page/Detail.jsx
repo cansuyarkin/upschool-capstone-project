@@ -45,23 +45,35 @@ function Detail() {
     );
 
     // console.log("movie detail", detail)
-    // console.log("new:", detail?.data?.data)
+    console.log("new:", detail?.data?.data)
     console.log("credits", credits)
     console.log("review", reviews)
     console.log("rec", recommendations)
 
     const jobs = ["director", "producer"]
 
+
+
     return <>
-        <div className="container border border-dark rounded p-5" style={{ backgroundColor: "#a4b0be" }}>
+        <div className="container border border-dark rounded p-5 mt-5" style={{ backgroundColor: "#a4b0be" }}>
             <div className="row">
-                <div className="col-4">
+                <h3>Movie Detail</h3>
+                <div className="col-4 mt-3">
                     <img src={detail?.data?.data.poster_path ? `https://image.tmdb.org/t/p/w300${detail?.data?.data.poster_path}` : "https://www.freeiconspng.com/uploads/no-image-icon-15.png"} alt="" />
                 </div>
-                <div className="col-8">
+                <div className="col-8 mt-3">
                     <h4>{detail?.data?.data?.title}</h4>
-                    <h6>{detail?.data?.data?.release_date}</h6>
-                    <p>{detail?.data?.data?.overview}</p>
+                    <h6>Release Date: {detail?.data?.data?.release_date}</h6>
+
+                    <h6> Genres:
+                        {detail?.data?.data?.genres.map(item => <span> {item.name} </span>)}
+                    </h6>
+
+                    <h6>
+                        Duration: {detail?.data?.data?.runtime} minutes
+                    </h6>
+
+                    <p className="mt-5">{detail?.data?.data?.overview}</p>
                     {
                         credits?.data?.data?.crew.filter(item => jobs.includes(item.job.toLowerCase())).map((item, index) => <h6>{item.job}: {item.name}</h6>)
                     }
