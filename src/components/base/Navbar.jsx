@@ -4,7 +4,7 @@ import { NavStyle } from "../../styledComponents";
 import { Link } from "react-router-dom";
 import { routes } from "../../routes";
 import { MdDarkMode } from "react-icons/md";
-import { BiCameraMovie } from "react-icons/bi"
+// import { BiCameraMovie } from "react-icons/bi"
 
 function Navbar(props) {
 

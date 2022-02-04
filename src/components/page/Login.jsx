@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { userLogin, userLogout } from "../../reduxStore/user";
 import { FormStyle, InputStyle, LoginButton } from "../../styledComponents/styledLogin";
 
@@ -13,7 +13,7 @@ function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
     // const handlePassword = () => {
