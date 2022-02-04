@@ -11,6 +11,7 @@ import store, { persistor } from "./reduxStore"
 import { PersistGate } from "redux-persist/integration/react"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const queryClient = new QueryClient();
 

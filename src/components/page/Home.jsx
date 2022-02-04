@@ -49,7 +49,7 @@ function Home() {
                         
                         <div className="m-2">
 
-                            <h3>Trending</h3>
+                            <h3 className="mt-5">Trending</h3>
 
                             <div className="btn-group">
 

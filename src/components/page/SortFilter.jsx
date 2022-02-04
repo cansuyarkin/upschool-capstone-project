@@ -3,7 +3,8 @@ import { useQuery } from "react-query";
 import { fetchGenres } from "../../api";
 import { getGenres } from "../../reduxStore/genres";
 import { useDispatch, useSelector } from "react-redux";
-
+import { useState } from "react";
+import DatePicker from "react-datepicker";
 
 function SortFilter() {
 
@@ -23,6 +24,12 @@ function SortFilter() {
     genresQuery?.data?.then((item) =>
         dispatch(getGenres(item?.data?.genres))
     );
+
+   
+    const [startDate, setStartDate] = useState(new Date());
+       
+          
+       
 
     return <>
         <div className="container">
@@ -49,10 +56,12 @@ function SortFilter() {
                 <div className="col-4 border border-dark rounded p-5">
                     <h3>Filter By</h3>
                     <h5>From:</h5>
-                    <h5>To:</h5>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                    <h5 className="mt-2">To:</h5>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                     {
                         genres?.map((item, index) =>
-                            <button key={index} className="btn btn-secondary">{item.name}</button>
+                            <button key={index} className="btn btn-secondary mt-3 mx-2">{item.name}</button>
                         )
                     }
 

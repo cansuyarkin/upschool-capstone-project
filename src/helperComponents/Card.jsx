@@ -37,8 +37,8 @@ function Card(props) {
                                 </div>
                                 <div className="row">
                                     <div className="col">
-                                        <AiFillStar onClick={() => dispatch(addFavList(item.id))} style={{ cursor: "pointer", width: "50px" }} />
-                                        <RiPlayListAddFill onClick={() => dispatch(addSeenList(item.id))} style={{ cursor: "pointer" }} />
+                                        <AiFillStar onClick={() => dispatch(addFavList(item.id))} style={{ cursor: "pointer", width: "50px" , color:"orange"}} />
+                                        <RiPlayListAddFill onClick={() => dispatch(addSeenList(item.id))} style={{ cursor: "pointer" , color:"black" }} />
                                     </div>
                                 </div>
                                 <div className="row">
@@ -47,7 +47,7 @@ function Card(props) {
                                 <div className="row">
                                     <h6 className="subtitle">{item.release_date}</h6>
                                 </div>
-                                <div className="row">
+                                <div className="row text-dark">
                                     <p>
                                         {
                                             item.genre_ids.map(item =>
