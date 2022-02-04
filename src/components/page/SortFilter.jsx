@@ -32,13 +32,13 @@ function SortFilter() {
             <div className="row">
                 <div className="col-4 border border-dark rounded mt-3 mb-3 py-5 px-3">
                     <select className="form-select" aria-label="Default select example" onChange={(e) => dispatch((e.target.options[e.target.selectedIndex].value))}>
-                        <option defaultValue="DEFAULT" >Sort By</option>
-                        <option defaultValue="original_title.asc">A to Z</option>
-                        <option defaultValue="2">Z to A</option>
-                        <option defaultValue="3">Most Popular</option>
-                        <option defaultValue="4">Least Popular</option>
-                        <option defaultValue="5">Newest Released</option>
-                        <option defaultValue="6">Oldest Released</option>
+                        <option value="DEFAULT" >Sort By</option>
+                        <option value="original_title.asc">A to Z</option>
+                        <option value="original_title.desc">Z to A</option>
+                        <option value="popularity.desc">Most Popular</option>
+                        <option value="popularity.asc">Least Popular</option>
+                        <option value="release_date.desc">Newest Released</option>
+                        <option value="release_date.asc">Oldest Released</option>
                     </select>
                 </div>
 

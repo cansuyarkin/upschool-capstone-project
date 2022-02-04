@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { userLogin } from "../../reduxStore/user";
+import { userLogin , userLogout} from "../../reduxStore/user";
 import { FormStyle, InputStyle, LoginButton } from "../../styledComponents/styledLogin";
 
 function Login() {
@@ -54,6 +54,8 @@ function Login() {
         {console.log(password)}
         {console.log("user:::",user)}
         {console.log("login", user.userLogin)}
+
+        <button onClick={() => dispatch(userLogout())}>log out</button>
     </>
 
 };

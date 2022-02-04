@@ -4,7 +4,7 @@ export const CardStyle = styled.div`
 background-color: orange ;
 display: flex;
 width: auto;
-height: 400px;
+height: 450px;
 justify-content: center;
 text-align: center;
 padding: 15px;
@@ -42,7 +42,7 @@ margin: 10px;
 export const MainCardStyle = styled.div`
 background-color: lightyellow;
 width: auto;
-height: 360px;
+height: 400px;
 margin-right: 15px;
 `
 

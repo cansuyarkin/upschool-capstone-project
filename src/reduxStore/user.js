@@ -1,5 +1,7 @@
 const USER_LOGIN = "USER_LOGIN";
 const USER_LOGOUT = "USER_LOGOUT";
+const ADD_SEEN_MOVIES = "ADD_SEEN_MOVIES"
+const ADD_FAV_MOVIES = "ADD_FAV_MOVIES"
 
 export const userLogin = (username, password) => ({
     type: USER_LOGIN,
@@ -9,6 +11,16 @@ export const userLogin = (username, password) => ({
 export const userLogout = () => ({
     type: USER_LOGOUT,
 });
+
+export const addSeenList = (id) => ({
+    type: ADD_SEEN_MOVIES,
+    payload: id
+})
+
+export const addFavList = (id) => ({
+    type: ADD_FAV_MOVIES,
+    payload: id
+})
 
 const initialState = {
         avatarUrl: "https://i.picsum.photos/id/1005/150/150.jpg?hmac=-Q1z4K5WO9Q7qDB-R9vrj9440_mRxpeHZMOFHblbB6s",
@@ -42,6 +54,16 @@ const userReducer = (state = initialState, action) => {
            
         case USER_LOGOUT:
             return { ...state, userLogin: false }
+
+            case ADD_FAV_MOVIES:
+                return !state.favorites.favoriteFilms?.includes(action.payload) ?
+                    { ...state, favorites: { favoriteFilms: [...state.favorites.favoriteFilms, action.payload], totalCount: state.favorites.totalCount + 1 } } :
+                    { ...state, favorites: { favoriteFilms: state.favorites.favoriteFilms?.filter(item => item !== action.payload), totalCount: state.favorites.totalCount - 1 } }
+            case ADD_SEEN_MOVIES:
+                return !state.seenList.seenFilms.includes(action.payload) ?
+                    { ...state, seenList: { seenFilms: [...state.seenList.seenFilms, action.payload], totalCount: state.seenList.totalCount + 1 } } :
+                    { ...state, seenList: { seenFilms: state.seenList.seenFilms?.filter(item => item !== action.payload), totalCount: state.seenList.totalCount - 1 } }
+
         default:
             return state
     }
